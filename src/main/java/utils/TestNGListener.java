@@ -16,11 +16,16 @@ import java.time.LocalTime;
 
 public class TestNGListener implements ITestListener {
 
-  @Override
-  public void onTestStart(ITestResult result) {
+
+  /*public void onTestStart(ITestResult result) {
     String browserName = result.getTestContext().getCurrentXmlTest().getParameter("browserName");
     System.out.println("Browser name is: " + browserName);
     //System.out.println("OnTestStart");
+  }*/
+
+  @Override
+  public void onTestStart(ITestResult iTestResult) {
+
   }
 
   @Override
