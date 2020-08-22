@@ -6,14 +6,17 @@
         <parameter name="browserName" value="Chrome"></parameter>
 
         <classes>
-            <!--<class name="TestStructurePrintForParallelExecution"/>
-            <class name="TestStructurePrint"/>-->
+            <class name="LoginTest"/>
+            <class name="AddCommentToJIRATicket"/>
+            <class name="CreateIssue"/>
+            <class name="ViewJIRATicket"/>
+
         </classes>
     </test>
 
     <listeners>
-        <!--<listener class-name="utils.TestNGListener"/>
-        <listener class-name="utils.TestNGListenerForPrint"/>-->
+        <listener class-name="utils.TestNGListener"/>
+        <!--<listener class-name="utils.TestNGListenerForPrint"/>-->
     </listeners>
 
 </suite>

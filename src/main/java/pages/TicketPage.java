@@ -1,7 +1,5 @@
 package pages;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -12,7 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.url;
 
 
 public class TicketPage {
@@ -40,6 +40,8 @@ public class TicketPage {
     private String ticketLink12148 = "https://jira.hillel.it/browse/WEBINAR-12148";
     private By commentDeleteSubmitButton = By.id("comment-delete-submit");
     private By successMessageDeleteComment = By.xpath("//div[@class='aui-message closeable aui-message-success aui-will-close']");
+    private By issueDetailsButton = By.id("issuedetails");
+    private String testedTicketNumber = "9060";
 
 
 
@@ -69,15 +71,14 @@ public class TicketPage {
     }
     public void deleteCommentSubmitClick(){
         $(commentDeleteSubmitButton).shouldBe(Condition.visible);
-        $(commentFooterButton).click();
+        $(commentDeleteSubmitButton).click();
     }
     public void successMessageDeleteCommentPresent(){
         $(successMessageDeleteComment).shouldBe(Condition.visible);
     }
     public void createButtonClick(){
-    clickOnElementWithRetry(createButton, projectField, 3, 3);
-
-
+        $(createButton).click();
+   // clickOnElementWithRetry(createButton, projectField, 3, 3);
 
     }
     private void clickOnElementWithRetry(By elementToBeClicked, By successCriteriaElement, int attempts, int timeOutInSeconds){
@@ -95,6 +96,7 @@ public class TicketPage {
             }
 
         }
+
     }
 
     public void enterProjectName(String project){
@@ -122,11 +124,19 @@ public class TicketPage {
     public void clickCreateIssueSubmitButton(){
         $(createTicketSubmitButton).click();
     }
-    public void createIsueSuccessMessagePresent(){
+    public void createIssueSuccessMessagePresent(){
         $(createTicketSuccessPopup).shouldBe(Condition.visible);
     }
     public void popupTitleIsPresent(){
         $(createTicketSuccessPopupTitle).shouldBe(Condition.visible);
+    }
+
+    public void issueDetailsButtonisDisplayed(){
+        $(issueDetailsButton).shouldBe(Condition.visible);
+    }
+
+    public void urlContainsTicketNumber(){
+        url().contains(testedTicketNumber);
     }
 
 }
