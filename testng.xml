@@ -3,7 +3,7 @@
 
     <test name="Sample Test">
 <!--        <parameter name="waitTimeOutInSeconds" value="10"></parameter>-->
-        <!--<parameter name="browserName" value="Chrome"></parameter>-->
+        <parameter name="browserName" value="Chrome"></parameter>
 
         <classes>
             <class name="LoginTest"/>
