@@ -19,26 +19,31 @@ public class HomePage {
     WebDriver driver = null;//не передавать какой именно
 
     // драйвер открывать, это делается в before методе
+    private String dashboardLink = "https://jira.hillel.it/secure/Dashboard.jspa";
+    private By headerDetailsUserFullname = By.id("header-details-user-fullname");
+    private String ticketLink = "https://jira.hillel.it/browse/WEBINAR-9060";
 
     public HomePage(WebDriver driver) {
 
         this.driver = driver;
     }
 
-    public boolean userIconIsPresent(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds());
-        return wait.until(ExpectedConditions.presenceOfElementLocated(By.id("header-details-user-fullname"))).isDisplayed();
+   /* public boolean userIconIsPresent(){*/
+        /*WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds());
+        return wait.until(ExpectedConditions.presenceOfElementLocated(By.id("header-details-user-fullname"))).isDisplayed();}*/
+
+    public void userFullNameIsDisplayed(){ $(headerDetailsUserFullname).shouldBe(Condition.visible);}
 
 
-    }
     public void navigateTo(){
-        open("https://jira.hillel.it/secure/Dashboard.jspa");
+        open(dashboardLink);
     }
+
     public void jiraTicketPath(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5).getSeconds());
-        boolean elementIsPresent = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("header-details-user-fullname"))).isDisplayed();
-        assertEquals(elementIsPresent, true);
-        driver.get("https://jira.hillel.it/browse/WEBINAR-9060");
+
+        $(headerDetailsUserFullname).shouldBe(Condition.visible);
+
+        open(ticketLink);
     }
 
 
