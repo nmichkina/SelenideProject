@@ -32,3 +32,4 @@ public class SampleSelenideTest {
         Configuration.assertionMode = Configuration.AssertionMode.STRICT;*/
     }
 }
+
