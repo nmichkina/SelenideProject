@@ -7,9 +7,9 @@
 
         <classes>
             <class name="LoginTest"/>
-            <class name="AddCommentToJIRATicket"/>
+           <!-- <class name="AddCommentToJIRATicket"/>
             <class name="CreateIssue"/>
-            <class name="ViewJIRATicket"/>
+            <class name="ViewJIRATicket"/>-->
 
         </classes>
     </test>
