@@ -1,9 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Sample Test Suite" parallel="classes" thread-count="2">
+<suite name="Sample Test Suite" parallel="false">
+       <!--parallel="classes" thread-count="2">-->
 
     <test name="Sample Test">
 <!--        <parameter name="waitTimeOutInSeconds" value="10"></parameter>-->
-        <parameter name="browserName" value="Chrome"></parameter>
+        <parameter name="browserName" value="chrome"></parameter>
 
         <classes>
             <class name="LoginTest"/>
@@ -14,9 +15,9 @@
         </classes>
     </test>
 
-    <listeners>
-        <!--<listener class-name="utils.TestNGListener"/>-->
-        <!--<listener class-name="utils.TestNGListenerForPrint"/>-->
-    </listeners>
+   <!-- <listeners>
+        &lt;!&ndash;<listener class-name="utils.TestNGListener"/>&ndash;&gt;
+        &lt;!&ndash;<listener class-name="utils.TestNGListenerForPrint"/>&ndash;&gt;
+    </listeners>-->
 
 </suite>
