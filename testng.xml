@@ -15,9 +15,9 @@
         </classes>
     </test>
 
-   <!-- <listeners>
-        &lt;!&ndash;<listener class-name="utils.TestNGListener"/>&ndash;&gt;
-        &lt;!&ndash;<listener class-name="utils.TestNGListenerForPrint"/>&ndash;&gt;
-    </listeners>-->
+    <listeners>
+        <listener class-name="utils.TestNGListener"/>
+        <!--<listener class-name="utils.TestNGListenerForPrint"/>-->
+    </listeners>
 
 </suite>
