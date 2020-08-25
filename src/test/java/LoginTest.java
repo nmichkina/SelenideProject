@@ -1,4 +1,3 @@
-import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -19,7 +18,7 @@ public class LoginTest {
     @Parameters("browserName")
     @BeforeMethod
     public void setUp(String browserName){
-        Configuration.browser = "chrome";
+        //Configuration.browser = "chrome";
         driver = WebDriverFactory.getDriver();
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
@@ -50,7 +49,6 @@ public class LoginTest {
 
     @AfterMethod
 
-    public void tearDown() { closeWebDriver();
+    public void tearDown() { closeWebDriver();}
     }
-}
 

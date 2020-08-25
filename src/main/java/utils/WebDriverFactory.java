@@ -1,19 +1,10 @@
 package utils;
 
-import com.google.common.collect.ImmutableMap;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.Command;
-import org.openqa.selenium.remote.CommandExecutor;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.Response;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class WebDriverFactory {
 
@@ -33,7 +24,7 @@ public class WebDriverFactory {
 
   public static void createInstance(String browserName) {
 
-    DesiredCapabilities capability = null;
+    //DesiredCapabilities capability = null;
     WebDriver driver = null;//
 
     if (browserName.toLowerCase().contains("firefox")) {
@@ -43,8 +34,8 @@ public class WebDriverFactory {
       WebDriverManager.iedriver().setup();
       driver = new InternetExplorerDriver();
     } else if (browserName.toLowerCase().contains("chrome")) {
-//      WebDriverManager.chromedriver().version("78.0.3904.70").setup();
-      WebDriverManager.chromedriver().setup();
+      WebDriverManager.chromedriver().version("84.0.4147.125").setup();
+      //WebDriverManager.chromedriver().setup();
       driver = new ChromeDriver();
     } else {
       driver = new ChromeDriver();
@@ -52,7 +43,7 @@ public class WebDriverFactory {
 
     driver.manage().window().maximize();
 
-    // Simulate slow network speed - network throttle
+   /* // Simulate slow network speed - network throttle
 
     Map<String, String> map = new HashMap<>();
     map.put("offline", "false");
@@ -66,7 +57,7 @@ public class WebDriverFactory {
       );
     } catch (IOException e) {
       e.printStackTrace();
-    }
+    }*/
 
     webDriver.set(driver);
   }
