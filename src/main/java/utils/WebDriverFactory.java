@@ -41,6 +41,7 @@ public class WebDriverFactory {
       driver = new ChromeDriver();
     }
 
+
     driver.manage().window().maximize();
 
    /* // Simulate slow network speed - network throttle
