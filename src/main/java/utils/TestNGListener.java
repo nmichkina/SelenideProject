@@ -1,12 +1,8 @@
 package utils;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import java.io.File;
 
 public class TestNGListener implements ITestListener {
 
@@ -68,8 +64,8 @@ public class TestNGListener implements ITestListener {
     //System.out.println("OnTestFinish");
   }
 
-  private File captureScreenshot() {
-    return ((TakesScreenshot) WebDriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
+  /*private File captureScreenshot() {
+    return ((TakesScreenshot) WebDriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);*/
 
-  }
+  //}
 }
