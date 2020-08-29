@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -6,11 +7,8 @@ import pages.HomePage;
 import pages.LoginPage;
 import pages.TicketPage;
 import utils.WebDriverFactory;
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static org.testng.Assert.assertTrue;
 
 public class AddCommentToJIRATicket {
 
@@ -41,7 +39,7 @@ public class AddCommentToJIRATicket {
 
     ticketPage.navigateTo();
     ticketPage.clickFooterCommentButton();
-    ticketPage.enterComment("New comment");
+    ticketPage.enterComment("comment");
     ticketPage.clickCommentSubmit();
 
     ticketPage.newCommentPresent();

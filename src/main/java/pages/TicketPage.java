@@ -64,7 +64,7 @@ public class TicketPage {
         $(commentSubmitButton).click();
     }
     public void newCommentPresent() {
-        $(By.xpath("//*[contains(text(), 'New comment')]")).shouldBe(Condition.visible);
+        $(By.xpath("//*[contains(text(), 'comment')]")).shouldBe(Condition.visible);
     }
     public void clickDeleteCommentButton(){
         $(deleteCommentButton).click();
