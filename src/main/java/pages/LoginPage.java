@@ -1,15 +1,10 @@
 package pages;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.HomePage;
-import java.time.Duration;
+
+import static com.codeborne.selenide.Selenide.$;
 
 
 public class LoginPage {
@@ -40,7 +35,7 @@ public class LoginPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds());
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//p[contains(text(),'"+message+"')]"))).isDisplayed();
         //return driver.findElement(By.xpath("//p[contains(text(),'"+message+"')]")).isDisplayed();*/
-    public void userFullNameIsDisplayed(){ $(headerUserFullname).shouldBe(Condition.visible);}
+    public void userFullNameIsDisplayed(){ $(headerUserFullname).shouldBe(Condition.exist);}
 
 
     }
