@@ -74,7 +74,7 @@ public class TestNGListener implements ITestListener {
     //System.out.println("OnTestFinish");
   }
 
-  private File captureScreenshot() {
+  public File captureScreenshot() {
     return ((TakesScreenshot) WebDriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
   }
 }
