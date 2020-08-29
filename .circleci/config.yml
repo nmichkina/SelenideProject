@@ -1,4 +1,5 @@
 version: 2
+
 jobs:
   build:
     docker:
@@ -11,3 +12,8 @@ jobs:
           name: run ui_smoke tests
           command: |
             mvn clean test
+
+      - store_artifacts:
+          path: test-reports
+          destination: test-reports
+          when: always
