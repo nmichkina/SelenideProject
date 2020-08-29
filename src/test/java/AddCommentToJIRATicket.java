@@ -39,7 +39,7 @@ public class AddCommentToJIRATicket {
 
     ticketPage.navigateTo();
     ticketPage.clickFooterCommentButton();
-    ticketPage.enterComment("comment");
+    ticketPage.enterComment("My_comment");
     ticketPage.clickCommentSubmit();
 
     ticketPage.newCommentPresent();
