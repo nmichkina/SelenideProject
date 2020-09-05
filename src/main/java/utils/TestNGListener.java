@@ -1,8 +1,18 @@
 package utils;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.time.LocalTime;
 
 public class TestNGListener implements ITestListener {
 
@@ -26,7 +36,7 @@ public class TestNGListener implements ITestListener {
 
   @Override
   public void onTestFailure(ITestResult result) {
-    /*File screenshotsFolder = new File(System.getProperty("user.dir") + "/screenshots");
+    File screenshotsFolder = new File(System.getProperty("user.dir") + "/screenshots");
 
     if (!screenshotsFolder.exists()) {
       screenshotsFolder.mkdir();
@@ -40,7 +50,7 @@ public class TestNGListener implements ITestListener {
       Files.copy(pathToScreenShot, Paths.get(screenshotName), StandardCopyOption.COPY_ATTRIBUTES);
     } catch (IOException e) {
       e.printStackTrace();
-    }*/
+    }
     //System.out.println("OnTestFailure");
   }
 
@@ -64,8 +74,9 @@ public class TestNGListener implements ITestListener {
     //System.out.println("OnTestFinish");
   }
 
-  /*private File captureScreenshot() {
-    return ((TakesScreenshot) WebDriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);*/
+  private File captureScreenshot() {
+    return  ((TakesScreenshot) WebDriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
 
-  //}
-}
+
+
+  }}
